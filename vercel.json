@@ -1,0 +1,26 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "klausurfeedback.de"
+        }
+      ],
+      "destination": "https://repitor.de/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.klausurfeedback.de"
+        }
+      ],
+      "destination": "https://repitor.de/:path*",
+      "permanent": true
+    }
+  ]
+}
