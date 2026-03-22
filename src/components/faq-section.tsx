@@ -1,13 +1,23 @@
 const FAQS = [
   {
-    question: "Wie genau ist die KI-Korrektur?",
+    question: "Wie funktioniert die KI-Korrektur?",
     answer:
-      "Repitor generiert keine eigenen Rechtsmeinungen — es vergleicht deine Bearbeitung Punkt für Punkt mit deiner Lösungsskizze. Das ist eine bewusste Designentscheidung: Deine Lösungsskizze ist die einzige Quelle der Wahrheit. Keine halluzinierten Normen, keine erfundenen Meinungsstreite. Das Feedback bezieht sich auf Aufbau, Gutachtenstil, Schwerpunktsetzung und Subsumtion.",
+      "Repitor generiert keine eigenen Rechtsmeinungen — es vergleicht deine Bearbeitung Punkt für Punkt mit deiner Lösungsskizze. Deine Lösungsskizze ist die einzige Quelle der Wahrheit. Keine halluzinierten Normen, keine erfundenen Meinungsstreite. Das Feedback bezieht sich auf Aufbau, Gutachtenstil, Schwerpunktsetzung und Subsumtion.",
   },
   {
-    question: "Funktioniert das für jedes Rechtsgebiet?",
+    question: "Für welche Rechtsgebiete funktioniert Repitor?",
     answer:
-      "Ja. Da du selbst die Lösungsskizze mitlieferst, funktioniert Repitor für jedes Rechtsgebiet und jede Klausurart — Zivilrecht, Strafrecht, Öffentliches Recht und mehr.",
+      "Für alle. Da du selbst die Lösungsskizze mitlieferst, funktioniert Repitor für jede Probeklausur und jedes Rechtsgebiet — Zivilrecht, Strafrecht, Öffentliches Recht, BGB AT, Schuldrecht, Sachenrecht, Verwaltungsrecht, Staatsrecht und mehr. Ob Übungsklausur im Strafrecht oder Examensklausur im Öffentlichen Recht — du lieferst den Maßstab.",
+  },
+  {
+    question: "Kann ich jede Probeklausur korrigieren lassen?",
+    answer:
+      "Ja. Solange du den Sachverhalt und eine Lösungsskizze hast, kannst du jede Probeklausur oder Übungsklausur mit Lösung korrigieren lassen — unabhängig von Rechtsgebiet, Schwierigkeitsgrad oder Uni. Repitor braucht kein eigenes Training pro Klausurtyp.",
+  },
+  {
+    question: "Ersetzt Repitor einen Klausurenkurs?",
+    answer:
+      "Nein. Repitor ist dein Trainingspartner zwischen den Klausurenkursen, nicht deren Ersatz. Je kürzer die Feedback-Schleife, desto schneller wirst du besser. Repitor hilft dir, gezielt an Aufbau, Technik und Schwerpunkten zu arbeiten — ergänzend zu Hemmer, Alpmann oder dem Uni-Klausurenkurs.",
   },
   {
     question: "Was passiert mit meinen hochgeladenen Dateien?",
@@ -22,14 +32,27 @@ const FAQS = [
   {
     question: "Was kostet Repitor?",
     answer:
-      "Erste Korrektur kostenlos — ohne Anmeldung, ohne Kreditkarte. Danach 4,90\u202F\u20AC pro Korrektur. Zum Vergleich: klassische Korrekturdienste kosten 25–35\u202F\u20AC und du wartest Wochen auf dein Ergebnis.",
+      "Deine erste Korrektur ist kostenlos — ohne Anmeldung, ohne Kreditkarte. Zur genauen Preisgestaltung informieren wir dich zum Launch.",
   },
   {
-    question: "Ersetzt Repitor die Uni-Korrektur?",
+    question: "Wann startet Repitor?",
     answer:
-      "Nein. Repitor ist dein Trainingspartner, nicht dein Prüfer. Je kürzer die Feedback-Schleife, desto schneller wirst du besser. Repitor hilft dir, gezielt an Aufbau, Technik und Schwerpunkten zu arbeiten — zwischen den offiziellen Klausuren.",
+      "Bald! Trag dich auf die Warteliste ein und wir benachrichtigen dich, sobald Repitor verfügbar ist. Du kannst dann als Erstes deine Probeklausur korrigieren lassen.",
   },
 ];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
 
 export function FaqSection() {
   return (
@@ -55,6 +78,11 @@ export function FaqSection() {
           ))}
         </div>
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
     </section>
   );
 }

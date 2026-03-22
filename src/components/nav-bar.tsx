@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -25,22 +26,30 @@ export function NavBar() {
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
-        <a href="#" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2">
           <span className="text-xl font-bold tracking-tight text-foreground">
             Repitor
           </span>
           <span className="inline-block size-2 rounded-full bg-primary" />
-        </a>
+        </Link>
 
-        <a
-          href="/korrektur"
-          className={buttonVariants({
-            size: "default",
-            className: "font-semibold",
-          })}
-        >
-          Klausur korrigieren
-        </a>
+        <div className="flex items-center gap-6">
+          <Link
+            href="/blog"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Blog
+          </Link>
+          <a
+            href="/#waitlist"
+            className={buttonVariants({
+              size: "default",
+              className: "font-semibold",
+            })}
+          >
+            Auf die Warteliste
+          </a>
+        </div>
       </div>
     </nav>
   );

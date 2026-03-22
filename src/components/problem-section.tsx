@@ -5,7 +5,7 @@ export function ProblemSection() {
     <section className="py-14 md:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <h2 className="text-3xl font-bold tracking-tighter text-foreground md:text-4xl">
-          Klausuren üben ist das effektivste Training
+          Probeklausuren schreiben ist das effektivste Training
         </h2>
 
         <div className="mt-10 grid gap-6 md:grid-cols-2">

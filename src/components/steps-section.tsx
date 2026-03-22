@@ -130,6 +130,19 @@ function ResultMock() {
 
 const STEP_MOCKS = [UploadMock, EditorMock, ResultMock];
 
+const howToJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "Jura-Klausur korrigieren lassen mit Repitor",
+  description:
+    "In drei Schritten erhältst du detailliertes Feedback zu deiner Jura-Klausur — Aufbau, Gutachtenstil, Schwerpunktsetzung und Subsumtion.",
+  step: STEPS.map((step) => ({
+    "@type": "HowToStep",
+    name: step.title,
+    text: step.description,
+  })),
+};
+
 export function StepsSection() {
   return (
     <section className="py-14 md:py-20">
@@ -185,6 +198,10 @@ export function StepsSection() {
           </div>
         </div>
       </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}
+      />
     </section>
   );
 }

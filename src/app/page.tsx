@@ -5,7 +5,9 @@ import { ProblemSection } from "@/components/problem-section";
 import { SolutionSection } from "@/components/solution-section";
 import { StepsSection } from "@/components/steps-section";
 import { StatsStrip } from "@/components/stats-strip";
+import { RechtsgebieteSection } from "@/components/rechtsgebiete-section";
 import { FaqSection } from "@/components/faq-section";
+import { BlogTeaser } from "@/components/blog-teaser";
 import { CtaSection } from "@/components/cta-section";
 import { Footer } from "@/components/footer";
 
@@ -20,7 +22,9 @@ export default function Home() {
         <SolutionSection />
         <StepsSection />
         <StatsStrip />
+        <RechtsgebieteSection />
         <FaqSection />
+        <BlogTeaser />
         <CtaSection />
       </main>
       <Footer />

@@ -1,24 +1,25 @@
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
+import { WaitlistForm } from "@/components/waitlist-form";
 
 export function Hero() {
   return (
-    <section className="pt-32 pb-16 md:pt-40 md:pb-20">
+    <section id="waitlist" className="pt-32 pb-16 md:pt-40 md:pb-20">
       <div className="mx-auto grid max-w-7xl items-center px-4 sm:px-6 md:grid-cols-[1.1fr_0.9fr] md:gap-12">
         {/* Left column — text */}
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-accent/60 px-4 py-1.5">
             <span className="inline-block size-2 animate-pulse rounded-full bg-primary" />
             <span className="text-sm font-medium text-muted-foreground">
-              Erste Korrektur kostenlos
+              Bald verfügbar — jetzt Platz sichern
             </span>
           </div>
 
           <h1 className="mt-6 max-w-[20ch] text-5xl font-bold leading-[0.95] tracking-tighter text-foreground sm:text-6xl md:text-7xl lg:text-[5.5rem]">
-            Jura-Klausur
+            Probeklausur
             <br />
-            korrigieren lassen.
+            geschrieben?
             <br />
-            <span className="text-primary">In Minuten.</span>
+            <span className="text-primary">Feedback in Minuten.</span>
           </h1>
 
           <p className="mt-6 max-w-[52ch] text-lg leading-relaxed text-muted-foreground md:text-xl">
@@ -27,19 +28,11 @@ export function Hero() {
             Rückmeldung zu Aufbau, Gutachtenstil und Schwerpunktsetzung.
           </p>
 
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <a
-              href="/korrektur"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-8 py-4 text-lg font-semibold tracking-tight text-primary-foreground transition-all duration-200 hover:bg-primary/85 focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:translate-y-px"
-            >
-              Jetzt kostenlos testen
-              <ArrowRight className="size-5" />
-            </a>
-          </div>
+          <WaitlistForm className="mt-8" />
 
           {/* Trust strip */}
           <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
-            {["Keine Anmeldung nötig", "Alle Rechtsgebiete", "Keine Datenspeicherung"].map((item) => (
+            {["Wir benachrichtigen dich zum Launch", "Alle Rechtsgebiete", "Erste Korrektur kostenlos"].map((item) => (
               <span key={item} className="flex items-center gap-1.5 text-sm text-muted-foreground">
                 <CheckCircle2 className="size-3.5 text-primary/60" />
                 {item}

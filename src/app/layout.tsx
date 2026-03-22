@@ -13,23 +13,26 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Repitor — KI-Klausurkorrektur für Jurastudierende",
+  title: "Repitor — Probeklausur schreiben, Feedback in Minuten | Jura Klausur Korrektur",
   description:
-    "Jura-Klausur korrigieren lassen — detailliertes Feedback zu Gutachtenstil, Aufbau und Schwerpunktsetzung in Minuten. Erste Korrektur kostenlos.",
+    "Probeklausur oder Übungsklausur mit Lösung geschrieben? Repitor gibt dir sofortiges Feedback zu Gutachtenstil, Aufbau und Schwerpunktsetzung — für alle Rechtsgebiete. Bald verfügbar — jetzt auf die Warteliste!",
   keywords: [
+    "Probeklausur Strafrecht",
+    "Probeklausur BGB",
+    "Probeklausur Öffentliches Recht",
+    "Übungsklausur mit Lösung",
     "Jura Klausur Korrektur",
     "Klausur korrigieren lassen Jura",
     "KI Klausurkorrektur Jura",
     "Jura Klausur üben",
     "Gutachtenstil Feedback",
     "Jura Examensklausur Übung",
-    "Jura Klausur Tipps Aufbau",
     "Klausurfeedback",
   ],
   openGraph: {
-    title: "Repitor — KI-Klausurkorrektur für Jurastudierende",
+    title: "Repitor — Probeklausur schreiben, Feedback in Minuten",
     description:
-      "Jura-Klausur korrigieren lassen — detailliertes Feedback zu Gutachtenstil und Aufbau in Minuten. Erste Korrektur kostenlos.",
+      "Probeklausur geschrieben? Sofortiges Feedback zu Gutachtenstil, Aufbau und Schwerpunktsetzung — für alle Rechtsgebiete. Jetzt auf die Warteliste!",
     url: "https://repitor.de",
     siteName: "Repitor",
     locale: "de_DE",
@@ -37,9 +40,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Repitor — KI-Klausurkorrektur für Jurastudierende",
+    title: "Repitor — Probeklausur schreiben, Feedback in Minuten",
     description:
-      "Jura-Klausur korrigieren lassen — detailliertes Feedback zu Gutachtenstil und Aufbau in Minuten. Erste Korrektur kostenlos.",
+      "Probeklausur geschrieben? Sofortiges Feedback zu Gutachtenstil, Aufbau und Schwerpunktsetzung — für alle Rechtsgebiete. Jetzt auf die Warteliste!",
   },
   alternates: {
     canonical: "https://repitor.de",
@@ -47,21 +50,31 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "Repitor",
-  applicationCategory: "EducationalApplication",
-  operatingSystem: "Web",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "EUR",
-    description: "Erste Korrektur kostenlos",
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Repitor",
+    applicationCategory: "EducationalApplication",
+    operatingSystem: "Web",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "EUR",
+      description: "Erste Korrektur kostenlos",
+    },
+    description:
+      "KI-gestützte Klausurkorrektur für Jurastudierende in Deutschland — Feedback zu Probeklausuren in Minuten",
   },
-  description:
-    "KI-gestützte Klausurkorrektur für Jurastudierende in Deutschland",
-};
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Repitor",
+    url: "https://repitor.de",
+    description:
+      "KI-gestützte Klausurkorrektur für Jurastudierende in Deutschland",
+  },
+];
 
 export default function RootLayout({
   children,

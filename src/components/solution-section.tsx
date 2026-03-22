@@ -29,7 +29,7 @@ export function SolutionSection() {
           {/* Left — headline + body */}
           <div>
             <h2 className="text-3xl font-bold tracking-tighter text-foreground md:text-4xl">
-              Sofortiges Feedback. Für 4,90{"\u202F"}€.
+              Sofortiges Feedback zu jeder Übungsklausur
             </h2>
             <p className="mt-4 max-w-[52ch] text-base leading-relaxed text-muted-foreground md:text-lg">
               Repitor analysiert deine Klausur anhand deiner Lösungsskizze —

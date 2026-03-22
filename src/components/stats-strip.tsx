@@ -1,6 +1,6 @@
 const STATS = [
   { value: "~5 Min", label: "bis zur fertigen Korrektur" },
-  { value: "4,90\u202F\u20AC", label: "pro Korrektur" },
+  { value: "Kostenlos", label: "die erste Korrektur" },
   { value: "Erste gratis", label: "ohne Anmeldung, ohne Kreditkarte" },
 ];
 
