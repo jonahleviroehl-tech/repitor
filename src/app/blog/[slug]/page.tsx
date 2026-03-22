@@ -53,28 +53,41 @@ export default async function BlogPost({ params }: Props) {
         href="/blog"
         className="text-sm text-muted-foreground hover:text-foreground transition-colors"
       >
-        &larr; Alle Beiträge
+        &larr; Alle Beitr&auml;ge
       </Link>
 
-      <header className="mt-6">
-        <p className="text-sm text-muted-foreground">
-          {new Date(post.date).toLocaleDateString("de-DE", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })}
-        </p>
-        <h1 className="mt-2 text-3xl font-bold tracking-tighter text-foreground md:text-4xl">
+      <header className="mt-8 rounded-2xl border border-border/60 bg-gradient-to-b from-accent/60 to-transparent px-6 py-8 md:px-8 md:py-10">
+        <div className="flex flex-wrap items-center gap-3">
+          {post.keyword && (
+            <span className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+              {post.keyword}
+            </span>
+          )}
+          <span className="text-sm text-muted-foreground">
+            {new Date(post.date).toLocaleDateString("de-DE", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </span>
+          {post.author && (
+            <>
+              <span className="text-muted-foreground/40">&middot;</span>
+              <span className="text-sm text-muted-foreground">{post.author}</span>
+            </>
+          )}
+        </div>
+        <h1 className="mt-4 max-w-[22ch] text-3xl font-bold leading-tight tracking-tighter text-foreground md:text-4xl lg:text-5xl">
           {post.title}
         </h1>
         {post.description && (
-          <p className="mt-3 text-lg leading-relaxed text-muted-foreground">
+          <p className="mt-4 max-w-[55ch] text-base leading-relaxed text-muted-foreground md:text-lg">
             {post.description}
           </p>
         )}
       </header>
 
-      <div className="mt-10 border-t border-border pt-10">
+      <div className="mt-10 pt-2">
         <MarkdownRenderer content={post.content} />
       </div>
 
