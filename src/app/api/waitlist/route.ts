@@ -1,11 +1,21 @@
 import { Client } from "@notionhq/client";
 import { NextResponse } from "next/server";
 
-const notion = new Client({ auth: process.env.NOTION_API_KEY });
-const databaseId = process.env.NOTION_WAITLIST_DB_ID!;
-
 export async function POST(request: Request) {
   try {
+    const apiKey = process.env.NOTION_API_KEY;
+    const databaseId = process.env.NOTION_WAITLIST_DB_ID;
+
+    if (!apiKey || !databaseId) {
+      console.error("Missing env vars:", { hasApiKey: !!apiKey, hasDbId: !!databaseId });
+      return NextResponse.json(
+        { error: "Server-Konfiguration fehlt.", debug: { hasApiKey: !!apiKey, hasDbId: !!databaseId } },
+        { status: 500 }
+      );
+    }
+
+    const notion = new Client({ auth: apiKey });
+
     const { email } = (await request.json()) as { email?: string };
 
     if (!email || !email.includes("@")) {
@@ -26,9 +36,10 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ ok: true });
   } catch (error) {
-    console.error("Waitlist signup failed:", error);
+    const msg = error instanceof Error ? error.message : String(error);
+    console.error("Waitlist signup failed:", msg);
     return NextResponse.json(
-      { error: "Eintragung fehlgeschlagen. Bitte versuche es erneut." },
+      { error: "Eintragung fehlgeschlagen. Bitte versuche es erneut.", debug: msg },
       { status: 500 }
     );
   }
