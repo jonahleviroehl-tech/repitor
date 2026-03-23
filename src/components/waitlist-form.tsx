@@ -69,7 +69,7 @@ export function WaitlistForm({ className }: { className?: string }) {
             if (state === "error") setState("idle");
           }}
           className={cn(
-            "h-12 flex-1 rounded-xl border bg-card px-4 text-base text-foreground placeholder:text-muted-foreground/60 outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-primary/20 sm:max-w-xs",
+            "h-12 w-full rounded-xl border bg-card px-4 text-base text-foreground placeholder:text-muted-foreground/60 outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-primary/20 sm:w-80",
             state === "error" ? "border-destructive" : "border-border"
           )}
         />
