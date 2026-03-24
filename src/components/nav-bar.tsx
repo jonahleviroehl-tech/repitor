@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { Logo } from "@/components/logo";
 
 export function NavBar() {
   const [scrolled, setScrolled] = useState(false);
@@ -26,11 +27,8 @@ export function NavBar() {
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="text-xl font-bold tracking-tight text-foreground">
-            Repitor
-          </span>
-          <span className="inline-block size-2 rounded-full bg-primary" />
+        <Link href="/" className="flex items-center">
+          <Logo size="sm" />
         </Link>
 
         <div className="flex items-center gap-6">

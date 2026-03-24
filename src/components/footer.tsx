@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Logo } from "@/components/logo";
 
 export function Footer() {
   return (
@@ -6,12 +7,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div>
-            <div className="flex items-center gap-2">
-              <span className="text-lg font-bold tracking-tight text-foreground">
-                Repitor
-              </span>
-              <span className="inline-block size-2 rounded-full bg-primary" />
-            </div>
+            <Logo size="sm" />
             <p className="mt-1 max-w-[40ch] text-sm text-muted-foreground">
               KI-gestützte Klausurkorrektur für Jurastudierende.
             </p>
