@@ -37,7 +37,7 @@ export default function ImpressumPage() {
 
         <h2>Kontakt</h2>
         <p>
-          E-Mail: kontakt@repitor.de
+          E-Mail: jonahleviroehl@googlemail.com
         </p>
 
         <h2>Umsatzsteuer</h2>
