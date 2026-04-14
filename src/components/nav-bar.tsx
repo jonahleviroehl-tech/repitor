@@ -32,12 +32,6 @@ export function NavBar() {
         </Link>
 
         <div className="flex items-center gap-6">
-          <Link
-            href="/blog"
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Blog
-          </Link>
           <a
             href="/#waitlist"
             className={buttonVariants({
