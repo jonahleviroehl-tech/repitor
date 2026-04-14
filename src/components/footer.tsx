@@ -16,25 +16,19 @@ export function Footer() {
           <div className="flex flex-col items-start gap-3 md:items-end">
             <div className="flex gap-6 text-sm text-muted-foreground">
               <Link
-                href="/blog"
-                className="transition-colors duration-200 hover:text-foreground"
-              >
-                Blog
-              </Link>
-              <Link
                 href="/impressum"
                 className="transition-colors duration-200 hover:text-foreground"
               >
                 Impressum
               </Link>
-              <a
-                href="#"
+              <Link
+                href="/datenschutz"
                 className="transition-colors duration-200 hover:text-foreground"
               >
                 Datenschutz
-              </a>
+              </Link>
               <a
-                href="#"
+                href="mailto:kontakt@repitor.de"
                 className="transition-colors duration-200 hover:text-foreground"
               >
                 Kontakt
