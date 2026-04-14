@@ -21,12 +21,12 @@ export function Footer() {
               >
                 Blog
               </Link>
-              <a
-                href="#"
+              <Link
+                href="/impressum"
                 className="transition-colors duration-200 hover:text-foreground"
               >
                 Impressum
-              </a>
+              </Link>
               <a
                 href="#"
                 className="transition-colors duration-200 hover:text-foreground"
