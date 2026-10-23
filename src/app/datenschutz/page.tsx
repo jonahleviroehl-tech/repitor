@@ -33,7 +33,7 @@ export default function DatenschutzPage() {
         <p>
           Verantwortlich im Sinne der DSGVO ist:
           <br />
-          Jonah Röhl, Eppendorferstieg 5, 22299 Hamburg, E-Mail:
+          Jonah Röhl, Eppendorferstieg 1, 22299 Hamburg, E-Mail:
           kontakt@repitor.de
         </p>
 
