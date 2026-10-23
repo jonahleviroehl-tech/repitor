@@ -28,7 +28,7 @@ export default function ImpressumPage() {
         <p>
           <strong>Jonah Röhl</strong>
           <br />
-          Eppendorferstieg 5
+          Eppendorferstieg 1
           <br />
           22299 Hamburg
           <br />
